@@ -1,0 +1,2 @@
+ljspeech-spec-00001.npy|ljspeech-mel-00001.npy|773|Printing, in the only sense with which we are at present concerned, differs from most if not from all the arts and crafts represented in the Exhibition
+ljspeech-spec-00002.npy|ljspeech-mel-00002.npy|152|in being comparatively modern.
