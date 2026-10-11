@@ -1,0 +1,33 @@
+# Virtual env
+.venv/
+__pycache__/
+*.pyc
+
+# Data (regenerate with: python main.py --step data && python main.py --step prep)
+data/raw/
+data/processed/
+# data/splits/ is COMMITTED: tiny text lists that pin the exact 200/25/25 partition
+# (download_data.py regenerates them deterministically with seed 42, but we keep them
+#  in the repo so results are reproducible without re-running the download step).
+
+# Large checkpoints exceed GitHub's 100 MB file limit -> excluded. seq2seq.pt (~11 MB)
+# and dctts_*.pt (~25 MB) ARE committed so --demo works for those two out of the box.
+# nn.pt (~144 MB) and the SVR joblibs (~600 MB) are regenerated with:
+#   python main.py --step svr && python main.py --step nn   (or: python main.py --all)
+checkpoints/svr_*.joblib
+checkpoints/nn.pt
+
+# Generated audio & heavy artifacts (regenerate: python main.py --all)
+results/audio/
+results/demo/
+
+# Logs
+*.log
+install_*.log
+
+# Reference PDFs are kept (small); original_code zip excluded if large
+reference/original_code/*.zip
+
+# OS
+.DS_Store
+Thumbs.db
